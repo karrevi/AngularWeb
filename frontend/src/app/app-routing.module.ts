@@ -8,7 +8,8 @@ import { HomeComponent } from './components/home/home.component';
 const routes: Routes = [
   {path: 'micuenta', component: MicuentaComponent},
   {path: 'registrarse', component: RegistrarseComponent},
-  {path: '', component: HomeComponent}
+  {path: '', component: HomeComponent},
+  {path: 'user/confirmado/:token', component: ConfirmedComponent}
 ];
 
 @NgModule({

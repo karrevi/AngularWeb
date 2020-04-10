@@ -20,7 +20,8 @@ module.exports = {
       role: {
         type: Sequelize.STRING
       },
-      createdAt: {
+      confirmed: Sequelize.BOOLEAN,
+        createdAt: {
         allowNull: false,
         type: Sequelize.DATE
       },
