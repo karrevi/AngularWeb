@@ -1,0 +1,18 @@
+<form class="container p-5" #loginform="ngForm" (submit)="micuenta(loginform)" >
+    <div class="form-group" >
+      <label for="username">Usuario</label><input type="text" class="form-control" name="username" id="username" 
+      [(ngModel)]="user.username">
+       </div>
+    <div class="form-group">
+      <label for="password">Contraseña</label>
+      <input type="password" class="form-control" name="password" id="password" 
+      [(ngModel)]="user.password">
+    </div>
+    <button type="submit" class="btn btn-dark">Submit</button>
+  </form>
+  <div class="alert alert-danger mx-5" *ngIf="errorMsg">
+    {{errorMsg}}
+  </div>
+  <div class="alert alert-success mx-5" *ngIf="successMsg">
+    {{successMsg}}
+  </div>

@@ -1,0 +1,21 @@
+input.ng-invalid.ng-touched{
+    outline:unset;
+    border: solid red;
+}
+input.ng-valid{
+    
+    border: solid green;
+}
+.container{
+    width: 38%;
+}
+
+.form-group{
+    padding-top: 10px;
+}
+
+.btn{
+    background-color: #DF7514;
+    border: none;
+    color: black;
+}
