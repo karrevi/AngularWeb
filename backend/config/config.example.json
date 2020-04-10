@@ -5,7 +5,12 @@
     "database": "panaderia-bbdd",
     "host": "127.0.0.1",
     "dialect": "mysql",
-    "operatorsAliases": false
+    "operatorsAliases": false,
+    "jwt_secret":"ejemplo",
+    "GMAIL": {
+      "user": "tueamil",
+      "pass": "tupass"
+    }
   },
   "test": {
     "username": "root",
@@ -13,7 +18,12 @@
     "database": "database_test",
     "host": "127.0.0.1",
     "dialect": "mysql",
-    "operatorsAliases": false
+    "operatorsAliases": false,    
+    "jwt_secret":"ejemplo",
+    "GMAIL": {
+      "user": "tueamil",
+      "pass": "tupass"
+    }
   },
   "production": {
     "username": "root",
@@ -21,6 +31,11 @@
     "database": "database_production",
     "host": "127.0.0.1",
     "dialect": "mysql",
-    "operatorsAliases": false
+    "operatorsAliases": false,    
+    "jwt_secret":"ejemplo",
+    "GMAIL": {
+      "user": "tueamil",
+      "pass": "tupass"
+    }
   }
 }
