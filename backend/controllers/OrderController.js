@@ -5,7 +5,19 @@ const OrderController = {
         Order.findAll({
             include:[Product]
         })
-        .then(order=>res.send(order))
+        .then(orders=>res.send(orders))
+    },
+    getByUser (req, res) {
+        Order.findAll({
+            include: [{
+                model: Product,
+                include: [Category]
+            }],
+            where: {
+                UserId: req.user.id
+            }
+        })
+        .then(orders => res.send(orders))
     },
     insert(req,res){
         Order.create({

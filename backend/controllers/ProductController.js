@@ -16,9 +16,15 @@ const ProductController = {
         res.status(500).send({message:'Ha habido un problema al cargar los productos'})
         })
     },
-    insert(req,res){
+    insert(req, res){
         Product.create({...req.body})
-        .then(product=>res.send(product))
+        .then(product => res.send({
+            product,
+            message: 'Se creó el producto'
+        }))
+        .catch(err => res.send({
+            message: 'Hubo un problema al crear el producto'
+        }))
     },
     getByCategory(req , res){
         Product.findAll({
