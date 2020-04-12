@@ -10,7 +10,7 @@ const routes: Routes = [
   {path: 'micuenta', component: MicuentaComponent},
   {path: 'registrarse', component: RegistrarseComponent},
   {path: '', component: HomeComponent},
-  {path: 'user/confirmado/:token', component: ConfirmedComponent}
+  {path: 'user/confirmed/:token', component: ConfirmedComponent}
 ];
 
 @NgModule({
