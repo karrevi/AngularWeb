@@ -15,7 +15,7 @@ const UserController = {
             const password = await bcrypt.hash(req.body.password, 9);
             const email = req.body.email
             const emailToken = jwt.sign({ email }, jwt_secret, { expiresIn: '3h' });
-            const url = API_URL + '/users/confirm/' + emailToken;
+            const url = API_URL + '/users/confirmed/' + emailToken;
             await transporter.sendMail({
                 to: email,
                 subject: 'Debes confirmar tu registro en nuestro sistema',
@@ -49,7 +49,7 @@ const UserController = {
             const payload = jwt.verify(emailToken, jwt_secret);
             const email = payload.email;
             await User.update({
-                confirm:true
+                confirmed:true
             }, {where: { email } });
             const user = await User.findOne({where:{email}});
             const authToken = jwt.sign({
@@ -59,7 +59,7 @@ const UserController = {
                 token:authToken,
                 UserId: user.id
             });
-            res.redirect('http://localhost:4200/user/confirmado/'+authToken);
+            res.redirect('http://localhost:4200/user/confirmed/'+authToken);
         }
         catch (error) {
             console.error(error)

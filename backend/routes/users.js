@@ -6,6 +6,6 @@ router.post('/register',UserController.register);
 router.post('/login',UserController.login);
 router.get('/info',authentication, UserController.getInfo);
 router.get('/',UserController.getAll);
-router.get('/confirm/:emailToken', UserController.confirm);
+router.get('/confirmed/:emailToken', UserController.confirm);
 
 module.exports = router
