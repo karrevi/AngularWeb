@@ -7,7 +7,7 @@ import { HeaderComponent } from './components/header/header.component';
 import { ContainerComponent } from './container/container.component';
 import { RegistrarseComponent } from './container/registrarse/registrarse.component';
 import { MicuentaComponent } from './container/micuenta/micuenta.component';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import {  HttpClientModule } from '@angular/common/http';
 import { HomeComponent } from './components/home/home.component';
 import { UserComponent } from './container/user/user.component';
@@ -28,7 +28,8 @@ import { ConfirmedComponent } from './container/user/confirmed/confirmed.compone
     BrowserModule,
     AppRoutingModule,
     FormsModule,
-    HttpClientModule
+    HttpClientModule,
+    ReactiveFormsModule 
   ],
   providers: [],
   bootstrap: [AppComponent]
