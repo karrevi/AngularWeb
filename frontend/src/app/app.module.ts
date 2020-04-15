@@ -12,8 +12,6 @@ import {  HttpClientModule } from '@angular/common/http';
 import { HomeComponent } from './components/home/home.component';
 import { UserComponent } from './container/user/user.component';
 import { ConfirmedComponent } from './container/user/confirmed/confirmed.component';
-import { AdministratorComponent } from './components/administrator/administrator.component';
-import { SearchProductsComponent } from './search-products/search-products.component';
 
 @NgModule({
   declarations: [
@@ -25,15 +23,13 @@ import { SearchProductsComponent } from './search-products/search-products.compo
     HomeComponent,
     UserComponent,
     ConfirmedComponent,
-    AdministratorComponent,
-    SearchProductsComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
     HttpClientModule,
-    ReactiveFormsModule
+    ReactiveFormsModule 
   ],
   providers: [],
   bootstrap: [AppComponent]

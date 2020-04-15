@@ -20,7 +20,7 @@ const UserController = {
                 to: email,
                 subject: 'Debes confirmar tu registro en nuestro sistema',
                 html:`
-                <h3> Bienvenid@ ${req.body.username} a nuestro pan recien horneado. Sigue los pasos para completar tu registro<h3>
+                <h3> Bienvenid@ ${req.body.username} a nuestro pan recien horneado. Sigue los pasoss para completar tu registro<h3>
                 <a href="${url}">Confirma tu registro</a>
                 Esto caduca en 3 horas.
                 `
@@ -59,7 +59,7 @@ const UserController = {
                 token:authToken,
                 UserId: user.id
             });
-            res.redirect('http://localhost:4200/user/confirmado/' + authToken);
+            res.redirect('http://localhost:4200/user/confirmed/'+authToken);
         }
         catch (error) {
             console.error(error)
