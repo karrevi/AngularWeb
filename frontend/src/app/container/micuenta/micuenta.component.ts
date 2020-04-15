@@ -29,7 +29,7 @@ export class MicuentaComponent implements OnInit {
         (res: HttpResponse<object>) => {
           console.log(res);
           const admins = ['superAdmin', 'admin', 'dios'];
-          const redirectRoute = admins.includes(res['user']['role']) ? '/' : '/';
+          const redirectRoute = admins.includes(res['user']['role']) ? 'administrator' : '/products';
           this.successMsg = res['message'];
           this.userService.setUser(res['user']);
           this.userService.setToken(res['token']);
