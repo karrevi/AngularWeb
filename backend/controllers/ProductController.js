@@ -1,40 +1,49 @@
-const { Product, Category, OrderProduct, Sequelize } = require('../models/index.js')
+const {
+    Product,
+    Category,
+    OrderProduct,
+    Sequelize
+} = require('../models/index.js')
 const Op = Sequelize.Op;
 
 
 const ProductController = {
-    getAll(req,res){
+    getAll(req, res) {
         Product.findAll({
-            include:[Category],
-            order:[
-                ['name', 'ASC']
-            ]
-        })
-        .then(products=>res.send(products))
-        .catch(err=>{
-            console.log(err)
-        res.status(500).send({message:'Ha habido un problema al cargar los productos'})
-        })
+                include: [Category],
+                order: [
+                    ['name', 'ASC']
+                ]
+            })
+            .then(products => res.send(products))
+            .catch(err => {
+                console.log(err)
+                res.status(500).send({
+                    message: 'Ha habido un problema al cargar los productos'
+                })
+            })
     },
-    insert(req, res){
-        Product.create({...req.body})
-        .then(product => res.send({
-            product,
-            message: 'Se creó el producto'
-        }))
-        .catch(err => res.send({
-            message: 'Hubo un problema al crear el producto'
-        }))
+    insert(req, res) {
+        Product.create({
+                ...req.body
+            })
+            .then(product => res.send({
+                product,
+                message: 'Se creó el producto'
+            }))
+            .catch(err => res.send({
+                message: 'Hubo un problema al crear el producto'
+            }))
     },
-    getByCategory(req , res){
+    getByCategory(req, res) {
         Product.findAll({
-            include: [Category],
-            where: {
-                categoryId: req.params.categoryId
-            }
-        })
-        .then(products => res.send(products))
-    },    
+                include: [Category],
+                where: {
+                    categoryId: req.params.categoryId
+                }
+            })
+            .then(products => res.send(products))
+    },
     async delete(req, res) {
         try {
             await Product.destroy({
@@ -53,6 +62,18 @@ const ProductController = {
         } catch (error) {
             console.log(error)
         }
+    },
+    getByName(req, res) {
+        Product.findAll({
+                where: {
+                    name: {
+                        [Op.like]: `%${req.params.name}%`
+                    }
+                },
+                include: [Category]
+            })
+            .then(products => res.send(products))
     }
+
 }
-module.exports=ProductController;
+module.exports = ProductController;
