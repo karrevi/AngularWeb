@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { UserService } from 'src/app/user.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-header',
@@ -9,8 +10,10 @@ import { UserService } from 'src/app/user.service';
 export class HeaderComponent implements OnInit {
 
   admins = ['admin'];
-
-  constructor(public userService: UserService) { }
+  public search: string
+  constructor(
+    public userService: UserService,
+    public router: Router) { }
 
   ngOnInit(): void {
   }
@@ -18,6 +21,14 @@ export class HeaderComponent implements OnInit {
   logOut() {
     localStorage.removeItem('authToken');
     this.userService[' user'] = { };
+  }
+
+  searchProducts() {
+    if (!this.search) {
+      this.router.navigate(['']);
+    } else {
+      this.router.navigate(['/products/search', this.search]);}
+    
   }
 
 }

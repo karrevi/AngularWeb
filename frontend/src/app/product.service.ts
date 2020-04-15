@@ -20,5 +20,8 @@ export class ProductService {
   getProductsByCategory(categoryId) {
     return this.httpClient.get('http://localhost:3000/products/category/' + categoryId);
   }
+  searchProducts(search) {
+    return this.httpClient.get('http://localhost:3000/products/name/' + search);
+  }
 }
 

@@ -12,7 +12,8 @@ import {  HttpClientModule } from '@angular/common/http';
 import { HomeComponent } from './components/home/home.component';
 import { UserComponent } from './container/user/user.component';
 import { ConfirmedComponent } from './container/user/confirmed/confirmed.component';
-
+import { SearchProductsComponent } from './container/search-products/search-products.component'
+;
 @NgModule({
   declarations: [
     AppComponent,
@@ -23,6 +24,7 @@ import { ConfirmedComponent } from './container/user/confirmed/confirmed.compone
     HomeComponent,
     UserComponent,
     ConfirmedComponent,
+    SearchProductsComponent,
   ],
   imports: [
     BrowserModule,
