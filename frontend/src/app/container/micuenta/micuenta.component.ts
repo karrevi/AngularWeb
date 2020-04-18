@@ -22,10 +22,10 @@ export class MicuentaComponent implements OnInit {
   ngOnInit(): void {
   }
   micuenta(loginForm: NgForm) {
-   // event.preventDefault();
+    // event.preventDefault();
     const user = loginForm.value;
     this.userService.micuenta(user)
-    .subscribe(
+      .subscribe(
         (res: HttpResponse<object>) => {
           console.log(res);
           const admins = ['superAdmin', 'admin', 'dios'];
@@ -33,7 +33,7 @@ export class MicuentaComponent implements OnInit {
           this.successMsg = res['message'];
           this.userService.setUser(res['user']);
           this.userService.setToken(res['token']);
-          localStorage.setItem('authToken', res['token']); setTimeout(() => this.router.navigate([redirectRoute]) , 2500);
+          localStorage.setItem('authToken', res['token']); setTimeout(() => this.router.navigate([redirectRoute]), 2500);
         },
         (error: HttpErrorResponse) => {
           this.errorMsg = error.error.message;

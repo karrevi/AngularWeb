@@ -19,14 +19,14 @@ export class SearchProductsComponent implements OnInit {
   ngOnInit(): void {
     console.log(this.route.params)
     this.route.params
-    .subscribe(params => {
-      this.productService.searchProducts(params.searchValue)
-      .subscribe(
-        (res: HttpResponse<any>) => {
-          this.products = res;
-        },
-        (error: HttpErrorResponse) => console.log(error)
-        );
+      .subscribe(params => {
+        this.productService.searchProducts(params.searchValue)
+          .subscribe(
+            (res: HttpResponse<any>) => {
+              this.products = res;
+            },
+            (error: HttpErrorResponse) => console.log(error)
+          );
       });
   }
 }

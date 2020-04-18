@@ -8,12 +8,13 @@ import { ContainerComponent } from './container/container.component';
 import { RegistrarseComponent } from './container/registrarse/registrarse.component';
 import { MicuentaComponent } from './container/micuenta/micuenta.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import {  HttpClientModule } from '@angular/common/http';
+import { HttpClientModule } from '@angular/common/http';
 import { HomeComponent } from './components/home/home.component';
 import { UserComponent } from './container/user/user.component';
 import { ConfirmedComponent } from './container/user/confirmed/confirmed.component';
-import { SearchProductsComponent } from './container/search-products/search-products.component'
-;
+import { SearchProductsComponent } from './container/search-products/search-products.component';
+import { AdministratorComponent } from './components/administrator/administrator.component'
+  ;
 @NgModule({
   declarations: [
     AppComponent,
@@ -25,13 +26,14 @@ import { SearchProductsComponent } from './container/search-products/search-prod
     UserComponent,
     ConfirmedComponent,
     SearchProductsComponent,
+    AdministratorComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
     HttpClientModule,
-    ReactiveFormsModule 
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

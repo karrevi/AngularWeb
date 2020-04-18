@@ -20,15 +20,16 @@ export class HeaderComponent implements OnInit {
 
   logOut() {
     localStorage.removeItem('authToken');
-    this.userService[' user'] = { };
+    this.userService[' user'] = {};
   }
 
   searchProducts() {
     if (!this.search) {
       this.router.navigate(['']);
     } else {
-      this.router.navigate(['/products/search', this.search]);}
-    
+      this.router.navigate(['/products/search', this.search]);
+    }
+
   }
 
 }

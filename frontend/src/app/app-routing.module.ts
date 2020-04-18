@@ -8,11 +8,11 @@ import { SearchProductsComponent } from './container/search-products/search-prod
 
 
 const routes: Routes = [
-  {path: 'micuenta', component: MicuentaComponent},
-  {path: 'registrarse', component: RegistrarseComponent},
-  {path: '', component: HomeComponent},
-  {path: 'user/confirmed/:token', component: ConfirmedComponent},
-  {path: 'products/search/:searchValue', component: SearchProductsComponent },
+  { path: 'micuenta', component: MicuentaComponent },
+  { path: 'registrarse', component: RegistrarseComponent },
+  { path: '', component: HomeComponent },
+  { path: 'user/confirmed/:token', component: ConfirmedComponent },
+  { path: 'products/search/:searchValue', component: SearchProductsComponent },
 ];
 
 @NgModule({

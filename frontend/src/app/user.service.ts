@@ -33,11 +33,11 @@ export class UserService {
     return this.users;
   }
   getUserInfo(token) {
-    return this.httpClient.get('http://localhost:3000/users/info' , {
-      headers : {
-        authorization : token
+    return this.httpClient.get('http://localhost:3000/users/info', {
+      headers: {
+        authorization: token
       }
     });
-}
+  }
 }
 

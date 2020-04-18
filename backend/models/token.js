@@ -4,8 +4,8 @@ module.exports = (sequelize, DataTypes) => {
     token: DataTypes.STRING,
     UserId: DataTypes.INTEGER
   }, {});
-  Token.associate = function(models) {
-      Token.belongsTo(models.User);
-     };
+  Token.associate = function (models) {
+    Token.belongsTo(models.User);
+  };
   return Token;
 };

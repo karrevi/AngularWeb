@@ -7,7 +7,7 @@ import { HttpClient } from '@angular/common/http';
   styleUrls: ['./home.component.scss']
 })
 export class HomeComponent implements OnInit {
-  public products ;
+  public products;
   constructor(public httpClient: HttpClient) { }
 
   ngOnInit(): void {
@@ -15,12 +15,12 @@ export class HomeComponent implements OnInit {
   }
   getAllProducts() {
     this.httpClient.get('http://localhost:3000/products')
-    .subscribe(
-      res => {
-        this.products = res;
-      },
-      error => console.log(error)
-    );
+      .subscribe(
+        res => {
+          this.products = res;
+        },
+        error => console.log(error)
+      );
   }
 
 }

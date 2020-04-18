@@ -34,7 +34,8 @@
   </div>
   <nav class="navbar navbar-light bg-light">
     <form class="form-inline" (submit)="searchProducts()">
-      <input class="form-control mr-sm-2" type="search" [(ngModel)]="search" (keyup)="searchProducts()" (input)="searchProducts()" name="search" placeholder="Buscar Productos" aria-label="Search">
+      <input class="form-control mr-sm-2" type="search" [(ngModel)]="search" (keyup)="searchProducts()"
+        (input)="searchProducts()" name="search" placeholder="Buscar Productos" aria-label="Search">
       <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Buscar</button>
     </form>
   </nav>

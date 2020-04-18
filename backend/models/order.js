@@ -4,7 +4,7 @@ module.exports = (sequelize, DataTypes) => {
     status: DataTypes.STRING,
     deliveryday: DataTypes.STRING
   }, {});
-  Order.associate = function(models) {
+  Order.associate = function (models) {
     Order.belongsToMany(models.Product, {
       through: models.OrderProduct
     });

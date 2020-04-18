@@ -7,7 +7,7 @@ module.exports = (sequelize, DataTypes) => {
     role: DataTypes.STRING,
     confirmed: DataTypes.BOOLEAN
   }, {});
-  User.associate = function(models) {
+  User.associate = function (models) {
     User.hasMany(models.Token);
   };
   return User;

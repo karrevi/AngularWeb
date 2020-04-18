@@ -4,12 +4,14 @@ const app = express();
 const PORT = 3000;
 
 const usersRouter = require('./routes/users')
-const productsRouter =require('./routes/products.js')
-const categoriesRouter =require('./routes/categories.js')
-const ordersRouter =require('./routes/orders.js')
+const productsRouter = require('./routes/products.js')
+const categoriesRouter = require('./routes/categories.js')
+const ordersRouter = require('./routes/orders.js')
 
 app.use(morgan('dev'))
-app.use(express.urlencoded({extended: true}));
+app.use(express.urlencoded({
+    extended: true
+}));
 app.use(express.json());
 
 app.use((req, res, next) => {
@@ -19,9 +21,9 @@ app.use((req, res, next) => {
     next();
 });
 
-app.use('/users',usersRouter);
-app.use('/products',productsRouter);
-app.use('/categories',categoriesRouter);
-app.use('/orders',ordersRouter);
+app.use('/users', usersRouter);
+app.use('/products', productsRouter);
+app.use('/categories', categoriesRouter);
+app.use('/orders', ordersRouter);
 
-app.listen(PORT,()=>console.log('servidor levantado' + PORT))
+app.listen(PORT, () => console.log('servidor levantado' + PORT))

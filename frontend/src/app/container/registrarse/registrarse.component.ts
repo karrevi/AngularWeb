@@ -26,16 +26,16 @@ export class RegistrarseComponent implements OnInit {
       ]],
       username: [null, [Validators.required]],
     });
-}
-confirmationValidator = (control: FormControl): { [ s: string]: boolean } =>{
-  if(!control.value) {
-    return { required:true };
   }
-  else if (control.value !== this.validateForm.controls.password.value){
-    return {confirm: true, error: true};
-  }
-  return{};
-};
+  confirmationValidator = (control: FormControl): { [s: string]: boolean } => {
+    if (!control.value) {
+      return { required: true };
+    }
+    else if (control.value !== this.validateForm.controls.password.value) {
+      return { confirm: true, error: true };
+    }
+    return {};
+  };
   registrarse(registrarseForm: NgForm) {
     if (registrarseForm.valid) {
       const user = registrarseForm.value;

@@ -1,40 +1,45 @@
-const { Product, Order, OrderProduct, Category } = require('../models/index.js')
+const {
+    Product,
+    Order,
+    OrderProduct,
+    Category
+} = require('../models/index.js')
 
 const OrderController = {
-    getAll(req,res){
+    getAll(req, res) {
         Order.findAll({
-            include:[Product]
-        })
-        .then(orders=>res.send(orders))
-    },
-    getByUser (req, res) {
-        Order.findAll({
-            include: [{
-                model: Product,
-                include: [Category]
-            }],
-            where: {
-                UserId: req.user.id
-            }
-        })
-        .then(orders => res.send(orders))
-    },
-    insert(req,res){
-        Order.create({
-            status:"pending",
-            deliveryday:req.body.deliveryday
-        })
-        .then(order => {
-            req.body.products.forEach(product=>{
-                order.addProduct(
-                    product[0], {
-                    through: {
-                    unidades: product[1]
-                    }
+                include: [Product]
             })
+            .then(orders => res.send(orders))
+    },
+    getByUser(req, res) {
+        Order.findAll({
+                include: [{
+                    model: Product,
+                    include: [Category]
+                }],
+                where: {
+                    UserId: req.user.id
+                }
+            })
+            .then(orders => res.send(orders))
+    },
+    insert(req, res) {
+        Order.create({
+                status: "pending",
+                deliveryday: req.body.deliveryday
+            })
+            .then(order => {
+                req.body.products.forEach(product => {
+                    order.addProduct(
+                        product[0], {
+                            through: {
+                                unidades: product[1]
+                            }
+                        })
+                });
+                res.send(order);
             });
-            res.send(order);
-        });
     },
 
     async delete(req, res) {
@@ -55,5 +60,6 @@ const OrderController = {
         } catch (error) {
             console.log(error)
         }
-    }}
+    }
+}
 module.exports = OrderController;

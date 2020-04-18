@@ -9,19 +9,19 @@ import { UserService } from 'src/app/user.service';
 })
 export class ConfirmedComponent implements OnInit {
 
-  email:string;
+  email: string;
 
   constructor(
     private route: ActivatedRoute,
     private router: Router,
-    public userService: UserService ) { }
+    public userService: UserService) { }
 
   ngOnInit(): void {
     const token = this.route.snapshot.params.token;
     this.userService.getUserInfo(token)
-    .subscribe(
-      res => this.userService.setUser(res)
-    )
+      .subscribe(
+        res => this.userService.setUser(res)
+      )
     localStorage.setItem('authToken', token);
     setTimeout(() => {
       this.router.navigate(['']);
