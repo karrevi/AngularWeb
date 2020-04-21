@@ -29,11 +29,12 @@ export class MicuentaComponent implements OnInit {
         (res: HttpResponse<object>) => {
           console.log(res);
           const admins = ['superAdmin', 'admin', 'dios'];
-          const redirectRoute = admins.includes(res['user']['role']) ? '/' : '/';
+          // const redirectRoute = admins.includes(res['user']['role']) ? 'administrator' : '/';
           this.successMsg = res['message'];
           this.userService.setUser(res['user']);
           this.userService.setToken(res['token']);
-          localStorage.setItem('authToken', res['token']); setTimeout(() => this.router.navigate([redirectRoute]), 2500);
+          localStorage.setItem('authToken', res['token']);
+          setTimeout(() => { this.router.navigate(['']) }, 2500);
         },
         (error: HttpErrorResponse) => {
           this.errorMsg = error.error.message;

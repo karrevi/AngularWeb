@@ -1,12 +1,17 @@
 const {
-    Category
+    Category, Product
 } = require('../models/index.js')
 const CategoryController = {
 
     getAll(req, res) {
-        Category.findAll()
-            .then(categories => res.send(categories))
-    },
+        Category.findAll({
+            include: [Product]
+        })
+        .then(categories => res.send(categories))
+        .catch(err => {
+            console.log(err)
+            res.status(500).send({ message: 'Ha habido un problema al cargar los productos' })
+        })},
     insert(req, res) {
         Category.create({
                 name: req.body.name

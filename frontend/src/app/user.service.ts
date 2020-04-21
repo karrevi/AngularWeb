@@ -7,7 +7,7 @@ import { Observable } from 'rxjs';
 })
 export class UserService {
   private token = '';
-  private users: object = {};
+  public users: object = {};
 
   constructor(public httpClient: HttpClient) { }
 

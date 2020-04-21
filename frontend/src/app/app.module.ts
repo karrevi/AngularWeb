@@ -13,7 +13,8 @@ import { HomeComponent } from './components/home/home.component';
 import { UserComponent } from './container/user/user.component';
 import { ConfirmedComponent } from './container/user/confirmed/confirmed.component';
 import { SearchProductsComponent } from './container/search-products/search-products.component';
-import { AdministratorComponent } from './components/administrator/administrator.component'
+import { AdministratorComponent } from './components/administrator/administrator.component';
+import { ProductsCategoryComponent } from './components/products-category/products-category.component'
   ;
 @NgModule({
   declarations: [
@@ -27,6 +28,7 @@ import { AdministratorComponent } from './components/administrator/administrator
     ConfirmedComponent,
     SearchProductsComponent,
     AdministratorComponent,
+    ProductsCategoryComponent,
   ],
   imports: [
     BrowserModule,

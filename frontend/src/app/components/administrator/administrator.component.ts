@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { UserService } from 'src/app/user.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-administrator',
@@ -7,9 +9,16 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AdministratorComponent implements OnInit {
 
-  constructor() { }
+  constructor(
+    public userService: UserService,
+    public router: Router ){ }
 
-  ngOnInit(): void {
-  }
+  ngOnInit(): void { }
 
+logOut(){
+  localStorage.removeItem('authToken');
+  this.userService.setUser({});
+  this.router.navigate(['']);
+  location.reload();
+}
 }

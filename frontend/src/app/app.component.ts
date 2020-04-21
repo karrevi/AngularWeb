@@ -15,7 +15,7 @@ export class AppComponent {
     if (token) {
       this.userService.getUserInfo(token)
         .subscribe(
-          (res: HttpResponse<object>) => this.userService.setUser(res),
+          (res: HttpResponse<object>) => {this.userService.setUser(res);console.log(res)},
           (error: HttpErrorResponse) => {
             console.error(error);
             localStorage.removeItem('authToken');

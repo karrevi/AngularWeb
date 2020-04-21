@@ -8,6 +8,7 @@ import { Observable } from 'rxjs';
 export class CategoryService {
 
   constructor(public httpClient: HttpClient) { }
+  categories;
 
   getAll() {
     return this.httpClient.get('http://localhost:3000/categories')
