@@ -9,6 +9,7 @@ import { SearchProductsComponent } from './container/search-products/search-prod
 import { ProductsCategoryComponent } from './components/products-category/products-category.component';
 import { UserAdminComponent } from './components/user-admin/user-admin.component';
 import { OrdersAdminComponent } from './components/orders-admin/orders-admin.component';
+import { CategoriesAdminComponent } from './components/categories-admin/categories-admin.component';
 
 
 const routes: Routes = [
@@ -20,7 +21,9 @@ const routes: Routes = [
   // { path: 'administrator', component: AdministratorComponent },
   { path: 'products/searchCategory/:id', component: ProductsCategoryComponent },
   { path: 'user/admin', component: UserAdminComponent },
-  { path: 'orders/admin' , component: OrdersAdminComponent}
+  { path: 'orders/admin' , component: OrdersAdminComponent},
+  { path: 'categories/admin' , component: CategoriesAdminComponent},
+  { path: 'product/admin' , component:ProductsCategoryComponent}
 ];
 
 @NgModule({
