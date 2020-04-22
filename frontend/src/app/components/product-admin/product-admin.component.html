@@ -1,1 +1,12 @@
-<p>product-admin works!</p>
+<div class="container">
+    <div class="products">
+      <div class="product" *ngFor="let product of products">
+        <h2>{{products.name}}</h2>
+        <h2>{{product.id}}</h2>
+        <img src="{{product.image_path}}" alt="">
+        <h2>€{{product.price}}</h2>
+        <h2>{{product.id}}</h2>
+        <h2>{{product.CategoryId}}</h2>
+      </div>
+    </div>
+  </div>

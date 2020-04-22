@@ -31,7 +31,7 @@
 
   <nav *ngIf="user.role==='admin'" class="nav justify-content-end navbar-light bg-light">
     <li class="nav-item">
-      <a class="nav-link disabled" href="" tabindex="-1" aria-disabled="true">Nombre de Usuario</a>
+      <a class="nav-link disabled" tabindex="-1" aria-disabled="true">Hola, {{[user.username]}} Bienvenid@ a nuestra web</a>
     </li>
     <li class="nav-item dropdown">
       <a class="nav-link dropdown-toggle" href="" id="navbarDropdown" role="button" data-toggle="dropdown"
@@ -67,21 +67,28 @@
       </div>
     </li>
     <li class="nav-item dropdown">
-      <a class="nav-link dropdown-toggle" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+      <a class="nav-link dropdown-toggle" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true"
+        aria-expanded="false">
         Usuarios
       </a>
-      <div class="dropdown-menu" aria-labelledby="navbarDropdown" >
-        <span class="dropdown-item" routerLink="user/admin" >Todas</span>
-        <span class="dropdown-item" routerLink="/micuenta">Añadir</span>
+      <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+        <span class="dropdown-item" routerLink="user/admin">Todas</span>
+        <span class="dropdown-item" routerLink="create/user">Añadir</span>
         <span class="dropdown-item" routerLink="/micuenta">Eliminar</span>
       </div>
+      <a class="nav-item" class="nav-link" routerLink="" (click)="logOut()">Cerrar Sesión</a>
     </li>
   </nav>
 </header>
-
-<div class="row-fluid">
-  <aside class="notificacionBar notificacionBar--Shop">
+<aside *ngIf="userService.getUser() as user">
+  <div id="list-example" *ngIf="user.role==='customer'" class="list-group">
     <li class="nav-item">
-      <a class="nav-link" routerLink="" (click)="logOut()">Cerrar Sesión</a>
-  </aside>
-</div>
+      <a class="nav-link disabled" tabindex="-1" aria-disabled="true">Hola, {{[user.username]}} Bienvenid@ a nuestra web</a>
+    </li>
+    <a class="list-group-item list-group-item-action" href="#list-item-1">Mi Perfil</a>
+    <a class="list-group-item list-group-item-action" href="#list-item-2">Mis Pedidos</a>
+    <a class="nav-item" class="nav-link" routerLink="" (click)="logOut()">Cerrar Sesión</a>
+  </div>
+</aside>
+
+
