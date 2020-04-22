@@ -14,8 +14,10 @@ import { UserComponent } from './container/user/user.component';
 import { ConfirmedComponent } from './container/user/confirmed/confirmed.component';
 import { SearchProductsComponent } from './container/search-products/search-products.component';
 import { AdministratorComponent } from './components/administrator/administrator.component';
-import { ProductsCategoryComponent } from './components/products-category/products-category.component'
-  ;
+import { ProductsCategoryComponent } from './components/products-category/products-category.component';
+import { UserAdminComponent } from './components/user-admin/user-admin.component';
+import { OrdersAdminComponent } from './components/orders-admin/orders-admin.component';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -29,6 +31,8 @@ import { ProductsCategoryComponent } from './components/products-category/produc
     SearchProductsComponent,
     AdministratorComponent,
     ProductsCategoryComponent,
+    UserAdminComponent,
+    OrdersAdminComponent,
   ],
   imports: [
     BrowserModule,

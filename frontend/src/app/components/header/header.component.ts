@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { UserService } from 'src/app/user.service';
-import { Router, ActivatedRoute } from '@angular/router';
+import { Router } from '@angular/router';
 import { CategoryService } from 'src/app/category.service';
 
 @Component({
@@ -11,11 +11,11 @@ import { CategoryService } from 'src/app/category.service';
 export class HeaderComponent implements OnInit {
   admins = ['admin'];
   public search: string;
+  public users;
 
   constructor(
     public userService: UserService,
     public router: Router,
-    public route: ActivatedRoute,
     public categoryService: CategoryService) { }
 
   ngOnInit(): void {
