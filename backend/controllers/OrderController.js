@@ -55,7 +55,7 @@ const OrderController = {
                 }
             })
             res.send(
-                'El pedido ha sido eliminado'
+                'La orden ha sido eliminada'
             )
         } catch (error) {
             console.log(error)

@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { UserService } from 'src/app/user.service';
-import { error } from 'protractor';
 
 @Component({
   selector: 'app-user-admin',

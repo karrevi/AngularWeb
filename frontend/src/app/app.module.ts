@@ -21,6 +21,7 @@ import { OrdersAdminComponent } from './components/orders-admin/orders-admin.com
 import { CategoriesAdminComponent } from './components/categories-admin/categories-admin.component';
 import { ProductAdminComponent } from './components/product-admin/product-admin.component';
 import { CreateUserComponent } from './components/create-user/create-user.component';
+import { ProfileComponent } from './components/profile/profile.component';
 
 
 @NgModule({
@@ -41,6 +42,7 @@ import { CreateUserComponent } from './components/create-user/create-user.compon
     CategoriesAdminComponent,
     ProductAdminComponent,
     CreateUserComponent,
+    ProfileComponent,
   ],
   imports: [
     BrowserModule,

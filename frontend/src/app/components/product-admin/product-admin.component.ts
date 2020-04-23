@@ -12,7 +12,6 @@ export class ProductAdminComponent implements OnInit {
   public categories;
   public message: string;
   public category: number;
-  public product = { id: 0, name: "", price: 0, image: "", CategoryId: 0 }
 
   constructor(
     public productService: ProductService,

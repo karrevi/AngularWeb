@@ -1,3 +1,15 @@
-.form-horizontal{
-    background-color: yellow;
+.container {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+
+.panel {
+  width: 750px;
+  margin: 0px auto;
+  .panel-heading{
+      border: 5px;
+      border-color: yellow;
+  }
 }

@@ -12,6 +12,7 @@ import { OrdersAdminComponent } from './components/orders-admin/orders-admin.com
 import { CategoriesAdminComponent } from './components/categories-admin/categories-admin.component';
 import { CreateUserComponent } from './components/create-user/create-user.component';
 import{ProductAdminComponent}from './components/product-admin/product-admin.component';
+import { ProfileComponent } from './components/profile/profile.component';
 
 const routes: Routes = [
   { path: 'micuenta', component: MicuentaComponent },
@@ -25,7 +26,8 @@ const routes: Routes = [
   { path: 'orders/admin' , component: OrdersAdminComponent},
   { path: 'categories/admin' , component: CategoriesAdminComponent},
   { path: 'product/admin' , component: ProductAdminComponent},
-  { path: 'create/user' , component: CreateUserComponent}
+  { path: 'create/user' , component: CreateUserComponent},
+  { path: 'profile' , component: ProfileComponent}
 ];
 
 @NgModule({

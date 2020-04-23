@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { UserService } from 'src/app/user.service';
+import { ProductService } from 'src/app/product.service';
+import { error } from 'protractor';
 
 @Component({
   selector: 'app-home',
@@ -9,7 +11,10 @@ import { UserService } from 'src/app/user.service';
 })
 export class HomeComponent implements OnInit {
   public products;
-  constructor(public httpClient: HttpClient, public userService:UserService, ) { }
+  public successMsg="";
+
+  constructor(public httpClient: HttpClient, public userService:UserService,
+    public productService: ProductService ) { }
 
   ngOnInit(): void {
     this.getAllProducts();const token: string = localStorage.getItem('authToken');
@@ -35,7 +40,19 @@ export class HomeComponent implements OnInit {
 
   }
   quitarItems(productId){
-    console.log(productId);
+    this.productService.delete(productId)
+    .subscribe(
+      (res)=>{
+        this.successMsg= res ['message'];
+        setTimeout(() =>{
+          this.successMsg="";
+        }, 2000);
+        this.productService.getAll()
+        .subscribe(res => {
+          this.products = res;},
+          error => console.log(error));
+      }
+    )
   }
 
 }

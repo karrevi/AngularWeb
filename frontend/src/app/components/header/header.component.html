@@ -62,8 +62,6 @@
       </a>
       <div class="dropdown-menu" aria-labelledby="navbarDropdown">
         <span class="dropdown-item" routerLink="orders/admin">Todas</span>
-        <span class="dropdown-item" routerLink="/registrarse">Añadir</span>
-        <span class="dropdown-item" routerLink="/micuenta">Eliminar</span>
       </div>
     </li>
     <li class="nav-item dropdown">
@@ -85,7 +83,7 @@
       <a class="nav-link disabled" tabindex="-1" aria-disabled="true">Hola, {{[user.username]}} Bienvenid@ a nuestra
         web</a>
     </li>
-    <a class="list-group-item list-group-item-action" href="#list-item-1">Mi Perfil</a>
+    <a class="list-group-item list-group-item-action" routerLink="profile">Mi Perfil</a>
     <a class="list-group-item list-group-item-action" href="#list-item-2">Mis Pedidos</a>
     <a class="nav-item" class="nav-link" routerLink="" (click)="logOut()">Cerrar Sesión</a>
   </div>
