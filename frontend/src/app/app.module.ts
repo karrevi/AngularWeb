@@ -1,6 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome'
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './components/header/header.component';
@@ -20,6 +21,7 @@ import { OrdersAdminComponent } from './components/orders-admin/orders-admin.com
 import { CategoriesAdminComponent } from './components/categories-admin/categories-admin.component';
 import { ProductAdminComponent } from './components/product-admin/product-admin.component';
 import { CreateUserComponent } from './components/create-user/create-user.component';
+
 
 @NgModule({
   declarations: [
@@ -45,7 +47,8 @@ import { CreateUserComponent } from './components/create-user/create-user.compon
     AppRoutingModule,
     FormsModule,
     HttpClientModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    FontAwesomeModule
   ],
   providers: [],
   bootstrap: [AppComponent]

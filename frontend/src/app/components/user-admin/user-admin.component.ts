@@ -17,5 +17,8 @@ export class UserAdminComponent implements OnInit {
        this.users = res;},
        error => console.log(error));
   }
+  borrarUser(userId){
+    console.log(userId);
+  }
 
 }

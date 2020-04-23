@@ -1,0 +1,30 @@
+.container {
+  height: 100vh;
+  grid-gap: 20px;
+  grid-template-columns: repeat(4, 100px);
+  grid-template-rows: 100px 100px 100px;
+}
+
+.users {
+  flex-wrap: wrap;
+  display: flex;
+  position: absolute;
+  margin: 50px;
+}
+
+.user {
+  padding: 0.5em;
+  margin: 0.5em;
+  border-radius: 0.5em;
+  background-color: white;
+
+  .fa-user-times {
+    cursor: pointer;
+  }
+}
+
+h2 {
+  text-align: center;
+  padding: 1px;
+  font-size: 15px;
+}
