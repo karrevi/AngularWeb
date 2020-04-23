@@ -34,5 +34,8 @@ export class HomeComponent implements OnInit {
       );
 
   }
+  quitarItems(productId){
+    console.log(productId);
+  }
 
 }

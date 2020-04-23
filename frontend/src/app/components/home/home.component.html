@@ -1,7 +1,10 @@
 <div class="container" *ngIf="userService.getUser() as user">
   <div class="products">
     <div class="product" *ngFor="let product of products">
-      <div class="icon" *ngIf="user.role==='admin'"><i class="far fa-edit"></i><i class="fas fa-trash"></i></div>
+      <div class="icon" *ngIf="user.role==='admin'">
+        <i class="far fa-edit"></i>
+        <i class="fas fa-trash" (click)="quitarItems(product.id)"></i>
+      </div>
       <h2>{{product.name}}</h2>
       <img src="{{product.image_path}}" alt="">
       <h2>€{{product.price}}</h2>

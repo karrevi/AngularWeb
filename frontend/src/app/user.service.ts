@@ -20,9 +20,9 @@ export class UserService {
   registrarse(user: object): Observable<any> {
     return this.httpClient.post('http://localhost:3000/users/register', user);
   }
-  createuser(user: object): Observable<any> {
-    return this.httpClient.post('http://localhost:3000/users/regsiter', user);
-  }
+  // createuser(user: object): Observable<any> {
+  //   return this.httpClient.post('http://localhost:3000/users/regsiter', user);
+  // }
   setToken(token: string): void {
     this.token = token;
   }
@@ -34,6 +34,13 @@ export class UserService {
   }
   getUser(): object {
     return this.users;
+  }
+  deleteUser(id:string|number, token:string){
+    return this.httpClient.delete(`http://localhost:3000/users/delete/${id}`, {
+      headers: {
+        authorization: token
+      }
+    });
   }
   getUserInfo(token) {
     return this.httpClient.get('http://localhost:3000/users/info', {

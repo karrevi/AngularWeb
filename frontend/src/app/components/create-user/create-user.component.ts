@@ -37,22 +37,22 @@ export class CreateUserComponent implements OnInit {
     }
     return {};
   };
-  createuser(createuserForm: NgForm) {
-    if (createuserForm.valid) {
-      const user = createuserForm.value;
-      this.userService.createuser(user)
-        .subscribe(
-          (res: HttpResponse<object>) => {
-            this.successMsg = res[' message'];
-            setTimeout(() => {
-              this.router.navigate(['micuenta']);
-            }, 2000);
-          },
-          (error: HttpErrorResponse) => {
-            this.errorMsg = error[' error'][' message'];
-            setTimeout(() => this.errorMsg = '', 2000);
-          }
-        );
-    }
-  }
+  // createuser(createuserForm: NgForm) {
+  //   if (createuserForm.valid) {
+  //     const user = createuserForm.value;
+  //     this.userService.createuser(user)
+  //       .subscribe(
+  //         (res: HttpResponse<object>) => {
+  //           this.successMsg = res[' message'];
+  //           setTimeout(() => {
+  //             this.router.navigate(['micuenta']);
+  //           }, 2000);
+  //         },
+  //         (error: HttpErrorResponse) => {
+  //           this.errorMsg = error[' error'][' message'];
+  //           setTimeout(() => this.errorMsg = '', 2000);
+  //         }
+  //       );
+  //   }
+  // }
 }

@@ -11,7 +11,7 @@ import { UserAdminComponent } from './components/user-admin/user-admin.component
 import { OrdersAdminComponent } from './components/orders-admin/orders-admin.component';
 import { CategoriesAdminComponent } from './components/categories-admin/categories-admin.component';
 import { CreateUserComponent } from './components/create-user/create-user.component';
-
+import{ProductAdminComponent}from './components/product-admin/product-admin.component';
 
 const routes: Routes = [
   { path: 'micuenta', component: MicuentaComponent },
@@ -24,7 +24,7 @@ const routes: Routes = [
   { path: 'user/admin', component: UserAdminComponent },
   { path: 'orders/admin' , component: OrdersAdminComponent},
   { path: 'categories/admin' , component: CategoriesAdminComponent},
-  { path: 'product/admin' , component: ProductsCategoryComponent},
+  { path: 'product/admin' , component: ProductAdminComponent},
   { path: 'create/user' , component: CreateUserComponent}
 ];
 

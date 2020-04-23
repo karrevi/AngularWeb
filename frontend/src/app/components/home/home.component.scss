@@ -17,7 +17,6 @@
   margin: 0.5em;
   border-radius: 0.5em;
   background-color: white;
-  cursor: pointer;
 
   h2 {
     text-align: center;
@@ -31,7 +30,13 @@
     width: 200px;
   }
 }
-.icon{
+
+.icon {
   display: flex;
   justify-content: space-between;
+  cursor: pointer;
+
+  .button {
+    cursor: pointer;
+  }
 }

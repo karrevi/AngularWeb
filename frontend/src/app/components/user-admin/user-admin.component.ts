@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { UserService } from 'src/app/user.service';
+import { error } from 'protractor';
 
 @Component({
   selector: 'app-user-admin',
@@ -8,6 +9,7 @@ import { UserService } from 'src/app/user.service';
 })
 export class UserAdminComponent implements OnInit {
   public users;
+  public successMsg="";
 
   constructor(public userService: UserService) { }
 
@@ -17,8 +19,23 @@ export class UserAdminComponent implements OnInit {
        this.users = res;},
        error => console.log(error));
   }
-  borrarUser(userId){
+
+  borrarUser(userId) {
+    const token = localStorage.getItem('authToken');
     console.log(userId);
+    this.userService.deleteUser(userId,token)
+    .subscribe(
+      (res)=>{
+        this.successMsg = res['message'];
+        setTimeout(() => {
+         this.successMsg="";
+        }, 2000);
+        this.userService.getAll()
+    .subscribe(res => {
+       this.users = res;},
+       error => console.log(error));
+      }
+    )
   }
 
 }

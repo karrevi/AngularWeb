@@ -129,6 +129,19 @@ const UserController = {
     },
     async getInfo(req, res) {
         res.send(req.user);
+    },
+    async delete(req, res) {
+        try {
+            await User.destroy({
+                where: {
+                    id: req.params.id
+                }
+            });
+            res.status(200).send({message:'Usuario eliminado'})
+        } catch (error) {
+            res.status(500).send(error)
+            console.log(error)
+        }
     }
 }
 module.exports = UserController;

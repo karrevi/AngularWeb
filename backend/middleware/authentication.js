@@ -14,7 +14,7 @@ const authentication = async (req, res, next) => {
         const user = await User.findByPk(payload.id); //buscamos el usuario en la base de datos con el id del payload
         const tokenFound = await Token.findOne({
             where: {
-                token: token
+                UserId: user.id
             }
         })
         if (!user || !tokenFound) {
