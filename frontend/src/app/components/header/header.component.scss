@@ -1,3 +1,10 @@
+header {
+  width: 100%;
+}
+li{
+  display: block;
+}
+
 .notificacionBar {
   min-height: 10px;
   background-color: rgba(0, 99, 65, 1);
@@ -11,7 +18,7 @@ img {
 }
 
 .bg-light {
-  background-color: #F7F7F7 !important;
+  background-color: #badc58 !important;
 }
 
 .navbar-light .navbar-nav .nav-link {
@@ -37,7 +44,7 @@ a {
   display: inline-block;
 }
 
-aside{
+aside {
   width: 30px;
   border-right-width: 15px;
   display: flex;

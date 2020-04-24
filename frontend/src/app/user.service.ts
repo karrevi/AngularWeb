@@ -20,9 +20,6 @@ export class UserService {
   registrarse(user: object): Observable<any> {
     return this.httpClient.post('http://localhost:3000/users/register', user);
   }
-  // createuser(user: object): Observable<any> {
-  //   return this.httpClient.post('http://localhost:3000/users/regsiter', user);
-  // }
   setToken(token: string): void {
     this.token = token;
   }

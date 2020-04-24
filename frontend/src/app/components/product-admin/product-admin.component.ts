@@ -32,8 +32,9 @@ export class ProductAdminComponent implements OnInit {
       },
         error => console.error(error));
   }
-  insertProduct(product) {
-    this.productService.insert(product)
+  insertProduct(products) {
+    console.log(products)
+    this.productService.insert(products)
       .subscribe(res => {
         this.message = res.message;
         setTimeout(() => this.message = "", 2500);
