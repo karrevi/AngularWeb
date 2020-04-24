@@ -5,7 +5,6 @@ import { RegistrarseComponent } from './container/registrarse/registrarse.compon
 import { HomeComponent } from './components/home/home.component';
 import { ConfirmedComponent } from './container/user/confirmed/confirmed.component';
 import { SearchProductsComponent } from './container/search-products/search-products.component';
-// import { AdministratorComponent } from './components/administrator/administrator.component';
 import { ProductsCategoryComponent } from './components/products-category/products-category.component';
 import { UserAdminComponent } from './components/user-admin/user-admin.component';
 import { OrdersAdminComponent } from './components/orders-admin/orders-admin.component';
@@ -20,7 +19,6 @@ const routes: Routes = [
   { path: '', component: HomeComponent },
   { path: 'user/confirmed/:token', component: ConfirmedComponent },
   { path: 'products/search/:searchValue', component: SearchProductsComponent },
-  // { path: 'administrator', component: AdministratorComponent },
   { path: 'products/searchCategory/:id', component: ProductsCategoryComponent },
   { path: 'user/admin', component: UserAdminComponent },
   { path: 'orders/admin' , component: OrdersAdminComponent},

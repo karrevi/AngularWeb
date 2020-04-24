@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ProductService } from 'src/app/product.service';
 import { CategoryService } from 'src/app/category.service';
+import { FormGroup, FormBuilder } from '@angular/forms';
 
 @Component({
   selector: 'app-product-admin',
@@ -8,12 +9,15 @@ import { CategoryService } from 'src/app/category.service';
   styleUrls: ['./product-admin.component.scss']
 })
 export class ProductAdminComponent implements OnInit {
+  public validateForm: FormGroup;
   public products;
   public categories;
   public message: string;
   public category: number;
+  public product = {}
 
   constructor(
+    public fb: FormBuilder,
     public productService: ProductService,
     public categoryService: CategoryService) { }
 
@@ -32,13 +36,12 @@ export class ProductAdminComponent implements OnInit {
       },
         error => console.error(error));
   }
-  insertProduct(products) {
-    console.log(products)
-    this.productService.insert(products)
+  insertProduct(product) {
+    this.productService.insert(product)
       .subscribe(res => {
         this.message = res.message;
         setTimeout(() => this.message = "", 2500);
-        this.getAll();
+        this.productService.insert(product);
       },
         error => {
           console.log(error);

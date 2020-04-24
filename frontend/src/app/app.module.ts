@@ -14,7 +14,6 @@ import { HomeComponent } from './components/home/home.component';
 import { UserComponent } from './container/user/user.component';
 import { ConfirmedComponent } from './container/user/confirmed/confirmed.component';
 import { SearchProductsComponent } from './container/search-products/search-products.component';
-import { AdministratorComponent } from './components/administrator/administrator.component';
 import { ProductsCategoryComponent } from './components/products-category/products-category.component';
 import { UserAdminComponent } from './components/user-admin/user-admin.component';
 import { OrdersAdminComponent } from './components/orders-admin/orders-admin.component';
@@ -36,7 +35,6 @@ import { ProfileComponent } from './components/profile/profile.component';
     UserComponent,
     ConfirmedComponent,
     SearchProductsComponent,
-    AdministratorComponent,
     ProductsCategoryComponent,
     UserAdminComponent,
     OrdersAdminComponent,

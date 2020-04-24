@@ -1,7 +1,8 @@
 <div>
-  <form action="">
-    <label for="fname">Nombre del producto</label>
-    <input type="text" id="fname" name="firstname" placeholder="nombre..">
+  <form #insertProductForm="ngForm" (submit)="insertProduct(insertProductForm)">
+    <label for="name">Nombre del producto</label>
+    <input type="text" id="name" #name="ngModel" name="name" placeholder="nombre.." ngModel required><div *ngIf="name.errors?.required && name.touched" class="alert alert-warning"></div>
+
     <label for="lname">Imagen del producto</label>
     <input type="text" id="lname" name="lastname" placeholder="imagen..">
     <label for="country">Categoría</label>
@@ -15,6 +16,6 @@
     </select>
     <label for="fname">Precio</label><br>
     <input type="text" id="fname" name="firstname" placeholder="precio.."><br>
-    <input type="submit" (click)="insertProduct(products)" value="Submit">
+    <input type="submit" (click)="insertProduct(product)" value="Submit">
   </form>
 </div>
